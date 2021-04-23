@@ -1,0 +1,30 @@
+FUNCTION dot_product(var U,V: ARRAY_OF FLOAT[N]) : FLOAT
+VAR
+    Ps :FLOAT:=0;
+    i :INTEGER;
+BEGIN
+    FOR i FROM 0 TO N STEP 1  DO
+        Ps:=Ps+(U[i]*V[i]); 
+    END_FOR
+    RETURN Ps ;
+END
+
+ALGORITHM orthogonality of two vecteurs
+VAR
+    N,n,j,i: INTEGER;
+    R: ARRAY_OF FLOAT[N];
+    F : ARRAY_OF FLOAT[N];
+BEGIN
+  Read(N)
+    FOR j FROM 1 TO n STEP 1  DO
+        FOR i FROM 0 TO N-1 STEP -1 step  DO
+            Read (R[i])
+            Read (F[i])
+        END_FOR
+    END_FOR
+    FOR j FROM 1 TO n STEP 1  DO
+        IF (dot_product(R,F)=0) THEN
+            Write('R and F are orthogonal')
+        END_IF
+    END_FOR
+END
